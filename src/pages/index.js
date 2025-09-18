@@ -84,7 +84,16 @@ const IndexPage = () => {
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center bg-cover bg-center bg-gray-800" 
-               style={{backgroundImage: `url(${heroImage})`}}>
+               style={{backgroundImage: `url(${(() => {
+                 // Get hero image from Notion database, fallback to hardcoded image
+                 const heroData = galleryData['hero-image'] || []
+                 if (heroData.length > 0 && heroData[0] && heroData[0].processedImages && heroData[0].processedImages[0]) {
+                   return heroData[0].processedImages[0]
+                 } else if (heroData.length > 0 && heroData[0] && heroData[0].images && heroData[0].images[0]) {
+                   return heroData[0].images[0]
+                 }
+                 return heroImage
+               })()})`}}>
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/60 z-0"></div>
         
