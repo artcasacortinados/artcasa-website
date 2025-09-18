@@ -165,4 +165,4 @@ const EstofosPage = () => {
 
 export default EstofosPage
 
-export const Head = () => <title>Estofos & Revestimentos - ArtCasa</title>
+export const Head = () => <title>Estofos & Revestimentos - Art'Casa</title>

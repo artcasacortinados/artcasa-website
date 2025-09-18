@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-4">
-              <img src={logoImage} alt="ArtCasa Logo" className="h-12 w-auto brightness-0 invert" />
+              <img src={logoImage} alt="Art'Casa Logo" className="h-12 w-auto brightness-0 invert" />
             </div>
             <p className="text-gray-400 font-bold">
               Especialistas em decoração de interiores.
@@ -27,9 +27,9 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-black mb-4 uppercase tracking-wide">Contactos</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>📧 info@artcasa.pt</li>
-              <li>📞 +351 123 456 789</li>
-              <li>📍 Porto, Portugal</li>
+              <li>📧 Artcasa.cortinados@gmail.com</li>
+              <li>📞 +351 913 329 907</li>
+              <li>📍 Rua de Freixieiro nº 289, 4640-174 Baião</li>
             </ul>
           </div>
           <div>
@@ -42,7 +42,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 ArtCasa. Todos os direitos reservados.</p>
+          <p>&copy; 2025 Art'Casa. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

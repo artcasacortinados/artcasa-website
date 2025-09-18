@@ -2,8 +2,11 @@ import * as React from "react"
 import Navigation from "../components/Navigation"
 import Footer from "../components/Footer"
 import CallToAction from "../components/CallToAction"
+import { useGalleryData } from "../hooks/useGalleryData"
 
 const QuemSomosPage = () => {
+  const galleryData = useGalleryData()
+  
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -16,7 +19,7 @@ const QuemSomosPage = () => {
           </h1>
           <div className="w-32 h-2 bg-black mx-auto mb-8"></div>
           <p className="text-xl text-gray-700 leading-relaxed font-medium max-w-3xl mx-auto">
-            Conheça a história, valores e equipa por trás da ArtCasa. Uma empresa dedicada à excelência em decoração e design de interiores.
+            Conheça a história, os valores e toda a equipa que envolve a Art'Casa - uma empresa que se dedica exclusivamente à decoração e design de interiores.
           </p>
         </div>
       </section>
@@ -32,22 +35,28 @@ const QuemSomosPage = () => {
               <div className="w-24 h-2 bg-[#B5720A] mb-8"></div>
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  Fundada há mais de 15 anos, a ArtCasa nasceu da paixão por transformar espaços em ambientes únicos e acolhedores. 
-                  Começámos como uma pequena empresa familiar e hoje somos uma referência no setor de decoração e design de interiores.
+                  Fundada há mais de 15 anos, a Art'Casa nasceu da paixão por transformar espaços em ambientes únicos e acolhedores. Começámos como uma pequena empresa familiar e hoje somos uma referência no setor de decoração e design de interiores.
                 </p>
                 <p>
-                  Ao longo dos anos, especializámo-nos em soluções completas de estores, cortinados, têxteis para o lar, tapetes, 
-                  estofos e papel de parede, sempre com foco na qualidade premium e no atendimento personalizado.
+                  Ao longo dos anos, especializámo-nos em soluções completas de estores, cortinados, têxteis lar, tapetes, estofos e papel de parede, sempre com foco na qualidade e no atendimento personalizado.
                 </p>
                 <p>
-                  A nossa experiência e dedicação permitiram-nos crescer e evoluir, mantendo sempre os valores fundamentais que nos 
-                  definem: qualidade, inovação e satisfação total do cliente.
+                  A nossa experiência e dedicação permitiram-nos crescer e evoluir, mantendo sempre os valores fundamentais que nos definem: qualidade, inovação e satisfação total do cliente.
                 </p>
               </div>
             </div>
             <div className="relative">
               <img 
-                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                src={(() => {
+                  // Get image from Notion database for "quem-somos" category, fallback to hardcoded image
+                  const quemSomosData = galleryData['quem-somos'] || []
+                  if (quemSomosData.length > 0 && quemSomosData[0] && quemSomosData[0].processedImages && quemSomosData[0].processedImages[0]) {
+                    return quemSomosData[0].processedImages[0]
+                  } else if (quemSomosData.length > 0 && quemSomosData[0] && quemSomosData[0].images && quemSomosData[0].images[0]) {
+                    return quemSomosData[0].images[0]
+                  }
+                  return "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                })()} 
                 alt="Interior design showcase"
                 className="w-full h-96 object-cover rounded-lg shadow-lg"
               />
@@ -77,8 +86,7 @@ const QuemSomosPage = () => {
               </div>
               <h3 className="text-2xl font-black text-black mb-4 uppercase tracking-wide">Missão</h3>
               <p className="text-gray-700 leading-relaxed">
-                Transformar espaços em ambientes únicos e funcionais, oferecendo soluções personalizadas de alta qualidade 
-                que reflitam a personalidade e necessidades dos nossos clientes.
+                Transformar espaços em ambientes únicos. Oferecer soluções completas aos nossos clientes, juntando um bom design, qualidade e um atendimento personalizado.
               </p>
             </div>
 
@@ -92,8 +100,7 @@ const QuemSomosPage = () => {
               </div>
               <h3 className="text-2xl font-black text-black mb-4 uppercase tracking-wide">Visão</h3>
               <p className="text-gray-700 leading-relaxed">
-                Ser a empresa de referência nacional em decoração de interiores, reconhecida pela inovação, 
-                qualidade e excelência no atendimento ao cliente.
+                Trabalhar com ética, transparência e compromisso em cada projeto. Valorizar a qualidade, a criatividade e a atenção ao detalhe para superar as expectativas dos nossos clientes.
               </p>
             </div>
 
@@ -106,8 +113,7 @@ const QuemSomosPage = () => {
               </div>
               <h3 className="text-2xl font-black text-black mb-4 uppercase tracking-wide">Valores</h3>
               <p className="text-gray-700 leading-relaxed">
-                Qualidade premium, inovação constante, compromisso com o cliente, sustentabilidade e 
-                paixão pelo que fazemos são os pilares fundamentais da nossa empresa.
+                Qualidade, inovação e compromisso com os nossos clientes são os pilares da nossa empresa.
               </p>
             </div>
           </div>
@@ -152,7 +158,16 @@ const QuemSomosPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative order-2 lg:order-1">
               <img 
-                src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                src={(() => {
+                  // Get second image from Notion database for "quem-somos" category, fallback to hardcoded image
+                  const quemSomosData = galleryData['quem-somos'] || []
+                  if (quemSomosData.length > 0 && quemSomosData[0] && quemSomosData[0].processedImages && quemSomosData[0].processedImages[1]) {
+                    return quemSomosData[0].processedImages[1]
+                  } else if (quemSomosData.length > 0 && quemSomosData[0] && quemSomosData[0].images && quemSomosData[0].images[1]) {
+                    return quemSomosData[0].images[1]
+                  }
+                  return "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                })()} 
                 alt="Quality craftsmanship"
                 className="w-full h-96 object-cover rounded-lg shadow-lg"
               />
@@ -165,16 +180,13 @@ const QuemSomosPage = () => {
               <div className="w-24 h-2 bg-[#B5720A] mb-8"></div>
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  Na ArtCasa, a qualidade não é apenas uma promessa - é o nosso compromisso diário. Trabalhamos exclusivamente 
-                  com fornecedores de confiança e materiais premium para garantir a durabilidade e beleza dos nossos produtos.
+                  Na Art'Casa, a qualidade não é apenas um objetivo — é o nosso compromisso diário. Trabalhamos com fornecedores de confiança e materiais de alta qualidade para garantir que cada projeto seja único, funcional e tenha durabilidade.
                 </p>
                 <p>
-                  Cada projeto é cuidadosamente planeado e executado por profissionais experientes, desde a primeira consulta 
-                  até à instalação final. O nosso objetivo é superar as expectativas dos clientes em cada detalhe.
+                  Cada detalhe importa. É por isso que acompanhamos todo o processo — do primeiro contacto à instalação final — com uma equipa experiente e dedicada. Queremos mais do que satisfazer: queremos surpreender.
                 </p>
                 <p>
-                  Oferecemos garantia em todos os nossos produtos e serviços, porque acreditamos na qualidade do nosso trabalho 
-                  e queremos que os nossos clientes tenham total confiança na sua escolha.
+                  Oferecemos garantia em todos os nossos produtos e serviços, porque acreditamos na qualidade do nosso trabalho e queremos que os nossos clientes tenham total confiança na sua escolha.
                 </p>
               </div>
             </div>
@@ -182,7 +194,7 @@ const QuemSomosPage = () => {
         </div>
       </section>
 
-      <CallToAction productName="conhecer melhor a ArtCasa" />
+      <CallToAction productName="conhecer melhor a Art'Casa" />
 
       <Footer />
     </div>
@@ -191,4 +203,4 @@ const QuemSomosPage = () => {
 
 export default QuemSomosPage
 
-export const Head = () => <title>Quem Somos - ArtCasa</title>
+export const Head = () => <title>Quem Somos - Art'Casa</title>

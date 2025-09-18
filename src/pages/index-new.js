@@ -238,9 +238,9 @@ const IndexPage = () => {
             <div>
               <h4 className="text-lg font-semibold mb-4">Contactos</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>📧 info@artcasa.pt</li>
-                <li>📞 +351 123 456 789</li>
-                <li>📍 Porto, Portugal</li>
+                <li>📧 Artcasa.cortinados@gmail.com</li>
+                <li>📞 +351 913 329 907</li>
+                <li>📍 Rua de Freixieiro nº 289, 4640-174 Baião</li>
               </ul>
             </div>
             <div>

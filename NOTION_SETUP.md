@@ -24,6 +24,8 @@ Create a Notion database with the following properties:
      - `papel-parede`
      - `tapetes`
      - `projects`
+     - `homepage-projects`
+     - `quem-somos`
 
 3. **Description** (Rich Text)
    - Type: Rich Text
@@ -127,6 +129,30 @@ NOTION_DATABASE_ID=abc123def456
    - **Year**: 2023
    - **Area**: "120m²"
    - **Style**: "Moderno"
+
+### For Homepage Project Images
+
+1. Create a new page in your database
+2. Set the **Name** (e.g., "Imagens Homepage")
+3. Set **Page Type** to `homepage-projects`
+4. Add a **Description** (optional)
+5. Upload **4 Images** for the homepage projects section
+   - These images will appear in the "Projetos & Serviços" section on the main page
+   - The first 4 images from this entry will be used
+   - Images should showcase your best work for the homepage
+
+### For Quem Somos Page Images
+
+1. Create **one single page** in your database
+2. Set the **Name** (e.g., "Imagens Quem Somos")
+3. Set **Page Type** to `quem-somos`
+4. Add a **Description** (optional)
+5. Upload **exactly 2 Images** in this specific order:
+   - **First image (position 0)**: Will appear in the "A Nossa História" section
+   - **Second image (position 1)**: Will appear in the "Compromisso com a Qualidade" section
+   - Images should represent your company's story and quality commitment
+
+**How it works**: The system automatically uses `images[0]` for "A Nossa História" and `images[1]` for "Compromisso com a Qualidade". The upload order in Notion determines which image goes where.
 
 ## Image Guidelines
 

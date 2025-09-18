@@ -10,7 +10,7 @@ require('dotenv').config()
  */
 module.exports = {
   siteMetadata: {
-    title: `ArtCasa`,
+    title: `Art'Casa`,
     siteUrl: `https://www.yourdomain.tld`
   },
   plugins: ["gatsby-plugin-postcss", "gatsby-plugin-image", "gatsby-plugin-sitemap", {

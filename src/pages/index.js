@@ -9,9 +9,12 @@ import estofosImage from "../images/estofos.png"
 import texteisLarImage from "../images/texteis-lar.png"
 import Navigation from "../components/Navigation"
 import Footer from "../components/Footer"
-import heroImage from "../images/hero.png"  
+import heroImage from "../images/hero.png"
+import { useGalleryData } from "../hooks/useGalleryData"  
 
 const IndexPage = () => {
+  const galleryData = useGalleryData()
+  
   // Contact form state
   const [formData, setFormData] = React.useState({
     name: '',
@@ -53,7 +56,7 @@ const IndexPage = () => {
           phone: formData.phone,
           location: formData.location,
           message: formData.message,
-          to_name: 'ArtCasa', // Your business name
+          to_name: 'Art\'Casa', // Your business name
         },
         PUBLIC_KEY
       )
@@ -89,13 +92,9 @@ const IndexPage = () => {
           <div className="max-w-4xl mx-auto">
             {/* Logo in Hero */}
             <div>
-              <img src={logoImage} alt="ArtCasa Logo" className="h-40 w-auto mx-auto brightness-0 invert opacity-90" />
+              <img src={logoImage} alt="Art'Casa Logo" className="h-128 w-auto mx-auto brightness-0 invert opacity-90" />
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight uppercase tracking-tight">
-              Transforme a sua casa num
-              <span className="block text-[#B5720A] mt-2">lar de sonho</span>
-            </h1>
-            <p className="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto leading-relaxed font-medium">
+            <p className="text-xl md:text-2xl lg:text-3xl text-white mb-8 max-w-3xl mx-auto leading-relaxed font-medium">
               Especialistas em decoração de interiores. 
               Criamos ambientes únicos e personalizados para o seu conforto.
             </p>
@@ -128,7 +127,6 @@ const IndexPage = () => {
             <div className="lg:w-1/2 lg:pl-12 mt-8 lg:mt-0 flex items-center">
               <p className="text-xl text-gray-700 leading-relaxed font-medium">
                 Descubra a nossa ampla gama de produtos para decoração de interiores. 
-                Qualidade premium e design exclusivo.
               </p>
             </div>
           </div>
@@ -232,34 +230,56 @@ const IndexPage = () => {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <div className="h-48 bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg overflow-hidden border border-gray-300">
-                <img 
-                  src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                  alt="Projeto sala de estar"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform"
-                />
-              </div>
-              <div className="h-48 bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg overflow-hidden border border-gray-300">
-                <img 
-                  src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                  alt="Projeto quarto"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform"
-                />
-              </div>
-              <div className="h-48 bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg overflow-hidden border border-gray-300">
-                <img 
-                  src="https://images.unsplash.com/photo-1556020685-ae41abfc9365?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                  alt="Projeto cozinha"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform"
-                />
-              </div>
-              <div className="h-48 bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg overflow-hidden border border-gray-300">
-                <img 
-                  src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                  alt="Projeto escritório"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform"
-                />
-              </div>
+              {(() => {
+                // Get images from Notion database for homepage projects, fallback to hardcoded images
+                const homepageProjects = galleryData['homepage-projects'] || []
+                const fallbackImages = [
+                  {
+                    url: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    alt: "Projeto sala de estar"
+                  },
+                  {
+                    url: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    alt: "Projeto quarto"
+                  },
+                  {
+                    url: "https://images.unsplash.com/photo-1556020685-ae41abfc9365?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    alt: "Projeto cozinha"
+                  },
+                  {
+                    url: "https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+                    alt: "Projeto escritório"
+                  }
+                ]
+                
+                // Use first 4 images from Notion or fallback images
+                const imagesToUse = []
+                for (let i = 0; i < 4; i++) {
+                  if (homepageProjects.length > 0 && homepageProjects[0] && homepageProjects[0].processedImages && homepageProjects[0].processedImages[i]) {
+                    imagesToUse.push({
+                      url: homepageProjects[0].processedImages[i],
+                      alt: `Projeto ${homepageProjects[0].name || 'Art\'Casa'} ${i + 1}`
+                    })
+                  } else if (homepageProjects.length > 0 && homepageProjects[0] && homepageProjects[0].images && homepageProjects[0].images[i]) {
+                    imagesToUse.push({
+                      url: homepageProjects[0].images[i],
+                      alt: `Projeto ${homepageProjects[0].name || 'Art\'Casa'} ${i + 1}`
+                    })
+                  } else {
+                    imagesToUse.push(fallbackImages[i])
+                  }
+                }
+                
+                return imagesToUse.map((image, index) => (
+                  <div key={index} className="h-48 bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg overflow-hidden border border-gray-300">
+                    <img 
+                      src={image.url} 
+                      alt={image.alt}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                ))
+              })()}
             </div>
           </div>
           
@@ -302,7 +322,7 @@ const IndexPage = () => {
               },
               {
                 name: "João Santos",
-                text: "Profissionais muito competentes. Recomendo vivamente os serviços da ArtCasa.",
+                text: "Profissionais muito competentes. Recomendo vivamente os serviços da Art'Casa.",
                 rating: 5
               },
               {
@@ -382,10 +402,10 @@ const IndexPage = () => {
                       </p>
                       <div className="mt-2 space-y-1">
                         <p className="text-xs text-red-700">
-                          📧 <a href="mailto:info@artcasa.pt" className="underline hover:text-red-900">info@artcasa.pt</a>
+                          📧 <a href="mailto:Artcasa.cortinados@gmail.com" className="underline hover:text-red-900">Artcasa.cortinados@gmail.com</a>
                         </p>
                         <p className="text-xs text-red-700">
-                          📞 <a href="tel:+351123456789" className="underline hover:text-red-900">+351 123 456 789</a>
+                          📞 <a href="tel:+351913329907" className="underline hover:text-red-900">+351 913 329 907</a>
                         </p>
                       </div>
                     </div>
@@ -489,4 +509,4 @@ const IndexPage = () => {
 
 export default IndexPage
 
-export const Head = () => <title>ArtCasa - Decoração de Interiores</title>
+export const Head = () => <title>Art'Casa - Decoração de Interiores</title>

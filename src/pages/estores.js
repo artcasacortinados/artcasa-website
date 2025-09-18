@@ -112,7 +112,7 @@ const EstoresPage = () => {
           </h1>
           <div className="w-32 h-2 bg-black mx-auto mb-8"></div>
           <p className="text-xl text-gray-700 leading-relaxed font-medium max-w-3xl mx-auto">
-            Soluções completas em estores para interior e exterior. Qualidade premium, design moderno e instalação profissional.
+            Na Art´Casa encontra estores versáteis e funcionais: estores de rolo, venezianos, vertika, painel japonês, romanetes, mosquiteiras e estores pelissados.
           </p>
         </div>
       </section>
@@ -352,4 +352,4 @@ const EstoresPage = () => {
 
 export default EstoresPage
 
-export const Head = () => <title>Estores - ArtCasa</title>
+export const Head = () => <title>Estores - Art'Casa</title>

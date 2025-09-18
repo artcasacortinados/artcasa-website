@@ -219,9 +219,8 @@ const ProjectsPage = () => {
                   )}
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
-                  <div className="mb-2">
+                  <div className="mb-4">
                     <h3 className="text-2xl font-black text-black mb-1 uppercase tracking-wide">{project.name || project.title}</h3>
-                    <p className="text-[#B5720A] font-medium text-sm uppercase tracking-wide">{project.projectInfo?.location || project.location}</p>
                   </div>
                   <p className="text-gray-700 leading-relaxed flex-1 font-medium">{project.description}</p>
                 </div>
@@ -356,4 +355,4 @@ const ProjectsPage = () => {
 
 export default ProjectsPage
 
-export const Head = () => <title>Projetos - ArtCasa</title>
+export const Head = () => <title>Projetos - Art'Casa</title>

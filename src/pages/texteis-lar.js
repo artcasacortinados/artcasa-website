@@ -165,4 +165,4 @@ const TexteisLarPage = () => {
 
 export default TexteisLarPage
 
-export const Head = () => <title>Têxteis Lar - ArtCasa</title>
+export const Head = () => <title>Têxteis Lar - Art'Casa</title>
