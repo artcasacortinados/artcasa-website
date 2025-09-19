@@ -355,4 +355,4 @@ const ProjectsPage = () => {
 
 export default ProjectsPage
 
-export const Head = () => <title>Projetos - Art'Casa</title>
+export const Head = () => <title>Projetos - ArtCasa</title>

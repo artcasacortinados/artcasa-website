@@ -352,4 +352,4 @@ const EstoresPage = () => {
 
 export default EstoresPage
 
-export const Head = () => <title>Estores - Art'Casa</title>
+export const Head = () => <title>Estores - ArtCasa</title>

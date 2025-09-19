@@ -180,7 +180,7 @@ const QuemSomosPage = () => {
               <div className="w-24 h-2 bg-[#B5720A] mb-8"></div>
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  Na Art'Casa, a qualidade não é apenas um objetivo — é o nosso compromisso diário. Trabalhamos com fornecedores de confiança e materiais de alta qualidade para garantir que cada projeto seja único, funcional e tenha durabilidade.
+                  Na ArtCasa, a qualidade não é apenas um objetivo — é o nosso compromisso diário. Trabalhamos com fornecedores de confiança e materiais de alta qualidade para garantir que cada projeto seja único, funcional e tenha durabilidade.
                 </p>
                 <p>
                   Cada detalhe importa. É por isso que acompanhamos todo o processo — do primeiro contacto à instalação final — com uma equipa experiente e dedicada. Queremos mais do que satisfazer: queremos surpreender.
@@ -194,7 +194,7 @@ const QuemSomosPage = () => {
         </div>
       </section>
 
-      <CallToAction productName="conhecer melhor a Art'Casa" />
+      <CallToAction productName="conhecer melhor a ArtCasa" />
 
       <Footer />
     </div>
@@ -203,4 +203,4 @@ const QuemSomosPage = () => {
 
 export default QuemSomosPage
 
-export const Head = () => <title>Quem Somos - Art'Casa</title>
+export const Head = () => <title>Quem Somos - ArtCasa</title>

@@ -165,4 +165,4 @@ const PapelParedePage = () => {
 
 export default PapelParedePage
 
-export const Head = () => <title>Papel de Parede - Art'Casa</title>
+export const Head = () => <title>Papel de Parede - ArtCasa</title>

@@ -171,4 +171,4 @@ const TapetesPage = () => {
 
 export default TapetesPage
 
-export const Head = () => <title>Tapetes Premium - Art'Casa</title>
+export const Head = () => <title>Tapetes Premium - ArtCasa</title>

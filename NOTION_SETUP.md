@@ -26,7 +26,6 @@ Create a Notion database with the following properties:
      - `projects`
      - `homepage-projects`
      - `quem-somos`
-     - `hero-image`
 
 3. **Description** (Rich Text)
    - Type: Rich Text
@@ -154,17 +153,6 @@ NOTION_DATABASE_ID=abc123def456
    - Images should represent your company's story and quality commitment
 
 **How it works**: The system automatically uses `images[0]` for "A Nossa História" and `images[1]` for "Compromisso com a Qualidade". The upload order in Notion determines which image goes where.
-
-### For Hero Background Image
-
-1. Create **one single page** in your database
-2. Set the **Name** (e.g., "Imagem Hero Homepage")
-3. Set **Page Type** to `hero-image`
-4. Add a **Description** (optional)
-5. Upload **1 Image** for the hero background:
-   - This image will be used as the background of the main homepage hero section
-   - Recommended: High-resolution landscape image (1920x1080 or larger)
-   - The image should work well with white text overlay
 
 ## Image Guidelines
 

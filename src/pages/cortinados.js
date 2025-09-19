@@ -318,4 +318,4 @@ const CortinadosPage = () => {
 
 export default CortinadosPage
 
-export const Head = () => <title>Cortinados - Art'Casa</title>
+export const Head = () => <title>Cortinados - ArtCasa</title>

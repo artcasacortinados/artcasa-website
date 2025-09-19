@@ -248,7 +248,7 @@ const IndexPage = () => {
               <ul className="space-y-2 text-gray-400">
                 <li>Segunda - Sexta: 9h-18h</li>
                 <li>Sábado: 9h-13h</li>
-                <li>Domingos e Feriados: Fechado</li>
+                <li>Domingo: Fechado</li>
               </ul>
             </div>
           </div>

@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-4">
-              <img src={logoImage} alt="Art'Casa Logo" className="h-12 w-auto brightness-0 invert" />
+              <img src={logoImage} alt="ArtCasa Logo" className="h-12 w-auto brightness-0 invert" />
             </div>
             <p className="text-gray-400 font-bold">
               Especialistas em decoração de interiores.
@@ -37,12 +37,12 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-400">
               <li>Segunda - Sexta: 9h-18h</li>
               <li>Sábado: 9h-13h</li>
-              <li>Domingos e Feriados: Fechado</li>
+              <li>Domingo: Fechado</li>
             </ul>
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 Art'Casa. Todos os direitos reservados.</p>
+          <p>&copy; 2025 ArtCasa. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
