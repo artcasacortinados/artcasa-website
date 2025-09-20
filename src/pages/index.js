@@ -92,7 +92,7 @@ const IndexPage = () => {
           <div className="max-w-4xl mx-auto">
             {/* Logo in Hero */}
             <div>
-              <img src={logoImage} alt="ArtCasa Logo" className="h-128 w-auto mx-auto brightness-0 invert opacity-90" />
+              <img src={logoImage} alt="ArtCasa Logo" className="h-48 sm:h-52 md:h-60 lg:h-80 xl:h-96 w-auto mx-auto brightness-0 invert opacity-90" />
             </div>
             <p className="text-xl md:text-2xl lg:text-3xl text-white mb-8 max-w-3xl mx-auto leading-relaxed font-serif font-light">
               Especialistas em decoração de interiores. 

@@ -16,11 +16,11 @@ const Navigation = () => {
   return (
     <nav className="bg-white shadow-lg border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16 sm:h-18 md:h-20 lg:h-22">
           <div className="flex-shrink-0">
             <div className="flex items-center">
               <a href="/">
-                <img src={logoImage} alt="ArtCasa Logo" className="h-16 w-auto" />
+                <img src={logoImage} alt="ArtCasa Logo" className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto" />
               </a>
             </div>
           </div>
