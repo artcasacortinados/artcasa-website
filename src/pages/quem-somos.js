@@ -35,7 +35,7 @@ const QuemSomosPage = () => {
               <div className="w-24 h-2 bg-[#B5720A] mb-8"></div>
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  A ArtCasa nasceu da paixão por transformar espaços em ambientes únicos e acolhedores. Começámos como uma pequena empresa familiar e hoje somos uma referência no setor de decoração e design de interiores.
+                  A Art'Casa nasceu da paixão por transformar espaços em ambientes únicos e acolhedores. Começámos como uma pequena empresa familiar e hoje somos uma referência no setor de decoração e design de interiores.
                 </p>
                 <p>
                   Ao longo dos anos, especializámo-nos em soluções completas de estores, cortinados, têxteis lar, tapetes, estofos e papel de parede, sempre com foco na qualidade e no atendimento personalizado.
