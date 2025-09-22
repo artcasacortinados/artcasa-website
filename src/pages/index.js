@@ -15,6 +15,13 @@ import { useGalleryData } from "../hooks/useGalleryData"
 const IndexPage = () => {
   const galleryData = useGalleryData()
   
+  // Debug the hero image data
+  console.log('🖼️ Hero Image Debug:', {
+    galleryDataKeys: Object.keys(galleryData),
+    heroImageData: galleryData['hero-image'],
+    hasHeroImages: galleryData['hero-image']?.length > 0
+  })
+  
   // Contact form state
   const [formData, setFormData] = React.useState({
     name: '',
@@ -84,7 +91,16 @@ const IndexPage = () => {
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center bg-cover bg-center bg-gray-800" 
-               style={{backgroundImage: `url(${heroImage})`}}>
+               style={{backgroundImage: `url(${(() => {
+                 // Get hero image from Notion database, fallback to hardcoded image
+                 const heroImageData = galleryData['hero-image'] || []
+                 if (heroImageData.length > 0 && heroImageData[0] && heroImageData[0].processedImages && heroImageData[0].processedImages[0]) {
+                   return heroImageData[0].processedImages[0]
+                 } else if (heroImageData.length > 0 && heroImageData[0] && heroImageData[0].images && heroImageData[0].images[0]) {
+                   return heroImageData[0].images[0]
+                 }
+                 return heroImage
+               })()})`}}>
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/60 z-0"></div>
         
