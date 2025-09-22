@@ -119,7 +119,10 @@ exports.sourceNodes = async ({
       'estofos': [],
       'papel-parede': [],
       'tapetes': [],
-      'projects': []
+      'projects': [],
+      'homepage-projects': [],
+      'quem-somos': [],
+      'hero-image': []
     }
 
     Object.entries(fallbackData).forEach(([category, items]) => {

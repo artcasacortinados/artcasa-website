@@ -52,7 +52,10 @@ async function getNotionGalleryData() {
       'estofos': [],
       'papel-parede': [],
       'tapetes': [],
-      'projects': []
+      'projects': [],
+      'homepage-projects': [],
+      'quem-somos': [],
+      'hero-image': []
     }
 
     for (const page of response.results) {
@@ -102,11 +105,16 @@ async function getNotionGalleryData() {
     console.log('✅ Final processed data:', {
       'estores-exterior': data['estores-exterior'].length,
       'estores-interior': data['estores-interior'].length,
+      'calhas': data['calhas'].length,
+      'cortinados': data['cortinados'].length,
       'texteis-lar': data['texteis-lar'].length,
       'estofos': data['estofos'].length,
       'papel-parede': data['papel-parede'].length,
       'tapetes': data['tapetes'].length,
-      'projects': data['projects'].length
+      'projects': data['projects'].length,
+      'homepage-projects': data['homepage-projects'].length,
+      'quem-somos': data['quem-somos'].length,
+      'hero-image': data['hero-image'].length
     })
 
     return data
@@ -183,6 +191,8 @@ function getFallbackData() {
         ]
       }
     ],
+    'calhas': [],
+    'cortinados': [],
     'texteis-lar': [],
     'estofos': [],
     'papel-parede': [],
@@ -217,6 +227,40 @@ function getFallbackData() {
           area: "200m²",
           style: "Rústico Moderno"
         }
+      }
+    ],
+    'homepage-projects': [
+      {
+        name: "Apartamento Moderno",
+        description: "Sala de estar elegante com estores plissados, tapetes texturizados e têxteis em tons neutros que criam um ambiente sofisticado.",
+        images: [
+          "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+        ]
+      }
+    ],
+    'quem-somos': [
+      {
+        name: "Historia da Empresa",
+        description: "Imagem para a secção A Nossa História",
+        images: [
+          "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+        ]
+      },
+      {
+        name: "Compromisso Qualidade",
+        description: "Imagem para a secção Compromisso com a Qualidade",
+        images: [
+          "https://images.unsplash.com/photo-1556020685-ae41abfc9365?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+        ]
+      }
+    ],
+    'hero-image': [
+      {
+        name: "Hero Background",
+        description: "Imagem de fundo da página principal",
+        images: [
+          "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+        ]
       }
     ]
   }

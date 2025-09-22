@@ -7,6 +7,13 @@ import { useGalleryData } from "../hooks/useGalleryData"
 const QuemSomosPage = () => {
   const galleryData = useGalleryData()
   
+  // Debug the quem-somos data
+  console.log('🏠 Quem Somos Debug:', {
+    galleryDataKeys: Object.keys(galleryData),
+    quemSomosData: galleryData['quem-somos'],
+    hasQuemSomosImages: galleryData['quem-somos']?.length > 0
+  })
+  
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
